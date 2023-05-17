@@ -61,6 +61,23 @@ int solution(int n, long long l, long long r)
 		b = 1;
 	else
 		b =  range_sum(l_level, l-1, 1);
+	/*
+	 * if l = 999,999,997
+	 *    r =1000,000,000
+	 *    real value = 0,1,2,3
+	 *    but cal = range_sum(999,999,997) hudge num!
+	 */
+	printf("r:%d l:%d\n",a,b);
 	answer = a-b;
 	return answer;
+}
+
+int main(void)
+{
+	int n;
+	long long l,r;
+	setbuf(stdout, NULL);
+	scanf("%d %lld %lld",&n, &l,&r);
+	solution(n,l,r);
+	return 0;
 }
